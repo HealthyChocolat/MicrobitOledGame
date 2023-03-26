@@ -15,7 +15,7 @@ input.onButtonPressed(Button.AB, function () {
 input.onButtonPressed(Button.B, function () {
     if (Cheat_code == Entry) {
         led.plot(1, 3)
-        Money += Cost - Money
+        Money += 10000000
     } else {
         Entry = ""
         basic.clearScreen()
@@ -43,14 +43,10 @@ loops.everyInterval(1000, function () {
 loops.everyInterval(1000, function () {
     Loop += 10
 })
-loops.everyInterval(1000, function () {
-    if (Multi <= 100) {
-        Counter += 1
-    }
-})
 basic.forever(function () {
+    basic.pause(100)
     if (Multi >= 100) {
-        basic.pause(5000)
+        basic.pause(1000)
         OLED.clear()
         OLED.writeStringNewLine("The End")
         OLED.newLine()
@@ -58,17 +54,20 @@ basic.forever(function () {
         OLED.writeNumNewLine(Counter)
         OLED.writeStringNewLine("Seconds!")
     } else {
-        for (let index = 0; index < Loop; index++) {
-            basic.pause(1000)
-            OLED.clear()
-            OLED.writeStringNewLine("Money")
-            OLED.writeNumNewLine(Money)
-            OLED.newLine()
-            OLED.writeStringNewLine("Cost")
-            OLED.writeNumNewLine(Cost)
-            OLED.newLine()
-            OLED.writeStringNewLine("Multiplier")
-            OLED.writeNumNewLine(Multi)
-        }
+        basic.pause(1000)
+        OLED.clear()
+        OLED.writeStringNewLine("Money")
+        OLED.writeNumNewLine(Money)
+        OLED.newLine()
+        OLED.writeStringNewLine("Cost")
+        OLED.writeNumNewLine(Cost)
+        OLED.newLine()
+        OLED.writeStringNewLine("Multiplier")
+        OLED.writeNumNewLine(Multi)
+    }
+    if (Multi <= 100) {
+    	
+    } else {
+        Counter += 1
     }
 })
