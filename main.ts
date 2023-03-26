@@ -43,6 +43,13 @@ loops.everyInterval(1000, function () {
 loops.everyInterval(1000, function () {
     Loop += 10
 })
+loops.everyInterval(1000, function () {
+    if (Multi <= 100) {
+    	
+    } else {
+        Counter += 1
+    }
+})
 basic.forever(function () {
     basic.pause(100)
     if (Multi >= 100) {
@@ -64,10 +71,5 @@ basic.forever(function () {
         OLED.newLine()
         OLED.writeStringNewLine("Multiplier")
         OLED.writeNumNewLine(Multi)
-    }
-    if (Multi <= 100) {
-    	
-    } else {
-        Counter += 1
     }
 })
