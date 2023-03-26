@@ -44,7 +44,7 @@ loops.everyInterval(1000, function () {
     Loop += 10
 })
 loops.everyInterval(1000, function () {
-    if (Multi <= 100) {
+    if (Multi >= 100) {
     	
     } else {
         Counter += 1
